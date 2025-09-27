@@ -1,6 +1,6 @@
 import { BiSolidTrashAlt } from "react-icons/bi"
 import { FiEdit } from "react-icons/fi"
-import "./NoteDetailPage.css"
+import "./NoteDetailpage.css"
 import { Link, useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import axios from "axios"

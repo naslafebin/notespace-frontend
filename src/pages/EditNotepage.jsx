@@ -15,7 +15,7 @@ const EditNotepage = ({updateNote}) => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    axios.get(`http://127.0.0.1:8000/notes/${slug}`)
+    axios.get(`https://notespacebackend-6svm.onrender.com/notes/${slug}`)
     .then(res => {
       console.log(res.data)
       setTitle(res.data.title)

@@ -21,7 +21,7 @@ const NoteDetailPage = ({deleteNote}) => {
 
   
   useEffect (() => {
-    axios.get(`http://127.0.0.1:8000/notes/${slug}`)
+    axios.get(`https://notespacebackend-6svm.onrender.com/notes/${slug}`)
     .then(res => {
       setNote(res.data)
       console.log(res.data)

@@ -36,7 +36,7 @@ const App = () => {
 
     useEffect(() => {
       if(searchText.length < 3) return;
-      axios.get(`http://127.0.0.1:8000/search-notes/?search=${searchText}`)
+      axios.get(`https://notespacebackend-6svm.onrender.com/search-notes/?search=${searchText}`)
       .then(res => {
         console.log(res.data)
         setNotes(res.data)
@@ -46,7 +46,7 @@ const App = () => {
 
     useEffect(() => {
       setIsLoading(true)
-      axios.get("http://127.0.0.1:8000/notes")
+      axios.get("https://notespacebackend-6svm.onrender.com/notes")
       .then(res => {
         console.log(res.data)
         setNotes(res.data)
@@ -58,7 +58,7 @@ const App = () => {
     }, [])
 
     const addNote = (data) => {
-      axios.post("http://127.0.0.1:8000/notes", data)
+      axios.post("https://notespacebackend-6svm.onrender.com/notes", data)
       .then(res => {
         setNotes([...notes, data])
         toast.success("A new note has been added")
@@ -70,7 +70,7 @@ const App = () => {
     }
 
     const updateNote = (data, slug) => {
-      axios.put(`http://127.0.0.1:8000/notes/${slug}`, data)
+      axios.put(`https://notespacebackend-6svm.onrender.com/notes/${slug}`, data)
       .then(res => {
         console.log(res.data)
         toast.success("Note updated successfully")
@@ -81,7 +81,7 @@ const App = () => {
     }
 
     const deleteNote = (slug) => {
-      axios.delete(`http://127.0.0.1:8000/notes/${slug}`)
+      axios.delete(`https://notespacebackend-6svm.onrender.com/notes/${slug}`)
       .then(res => {
         setNotes([...notes])
       })
